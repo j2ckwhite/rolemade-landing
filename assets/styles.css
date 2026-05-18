@@ -595,7 +595,7 @@ section > .narrow { position: relative; z-index: 1; }
 
 .hero-title { margin-bottom: 28px; }
 @media (max-width: 720px) {
-  .hero-title { font-size: 60.32px !important; }
+  .hero-title { font-size: 50px !important; }
 }
 
 .rotate-word {
