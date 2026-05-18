@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0F1A" />
+  <title>RoleMade — Example breakdown</title>
+  <meta name="description" content="What gets fixed — before and after, what goes in, what comes out, and what day one looks like." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,36..144,400;0,36..144,500;0,36..144,700;1,36..144,400;1,36..144,500&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,36..144,400;0,36..144,500;0,36..144,700;1,36..144,400;1,36..144,500&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" />
+
+  <link rel="preload" as="style" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="preload" as="script" href="assets/main.js" />
+</head>
+<body>
+
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="shell">
+
+    <!-- NAV -->
+    <nav class="nav" role="navigation" aria-label="Primary">
+      <div class="nav-inner">
+        <a class="brand" href="index.html" aria-label="RoleMade home">
+          <span class="brand-name">Role<span style="color:var(--amber);">Made</span></span>
+        </a>
+
+        <div class="nav-links">
+          <a class="nav-link" href="index.html#problem">Problem</a>
+          <a class="nav-link" href="index.html#process">Process</a>
+          <a class="nav-link" href="index.html#examples">Examples</a>
+        </div>
+
+        <div class="nav-cta">
+          <a class="btn btn-primary" href="https://calendly.com/jackzwhitee/15min" target="_blank" rel="noopener noreferrer">
+            Book 20-Min Call <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <button class="nav-burger" aria-label="Open menu" aria-controls="drawer">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2 4h12M2 8h12M2 12h12" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="drawer-scrim" aria-hidden="true"></div>
+    <aside class="drawer" id="drawer" aria-label="Mobile menu">
+      <div class="drawer-head">
+        <span class="brand">
+          <span class="brand-name">Role<span style="color:var(--amber);">Made</span></span>
+        </span>
+        <button class="drawer-close" aria-label="Close menu">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3l10 10M13 3L3 13" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <a class="drawer-link" href="index.html"><span>Home</span><span class="arrow">→</span></a>
+      <a class="drawer-link" href="index.html#problem"><span>Problem</span><span class="arrow">→</span></a>
+      <a class="drawer-link" href="index.html#process"><span>Process</span><span class="arrow">→</span></a>
+      <a class="drawer-link" href="index.html#examples"><span>Examples</span><span class="arrow">→</span></a>
+      <a class="drawer-link" href="index.html#objections"><span>Answers</span><span class="arrow">→</span></a>
+      <div class="drawer-cta">
+        <a class="btn btn-primary" href="https://calendly.com/jackzwhitee/15min" target="_blank" rel="noopener noreferrer">
+          Book A 20-Minute Call <span class="arrow">→</span>
+        </a>
+      </div>
+      <p class="drawer-aside">or email <a href="mailto:hello@rolemade.com">hello@rolemade.com</a></p>
+    </aside>
+
+    <main id="top">
+
+      <!-- CRUMB -->
+      <div class="crumb-wrap">
+        <div class="container">
+          <nav class="crumb" aria-label="Breadcrumb">
+            <a href="index.html"><span aria-hidden="true">←</span> RoleMade</a>
+            <span class="sep">/</span>
+            <a href="index.html#examples">What Gets Fixed</a>
+            <span class="sep">/</span>
+            <span class="here" id="crumb-here">Example</span>
+          </nav>
+        </div>
+      </div>
+
+      <!-- EXAMPLE HERO -->
+      <section class="ex-hero" id="ex-hero" aria-labelledby="ex-title">
+        <div class="container">
+          <div class="ex-hero-grid">
+            <div>
+              <div class="ex-eyebrow" id="ex-industry" data-reveal></div>
+              <h1 class="ex-title" id="ex-title" data-reveal></h1>
+              <p class="ex-tagline" id="ex-tagline" data-reveal></p>
+              <p class="ex-summary" id="ex-summary" data-reveal></p>
+              <div class="ex-role" data-reveal>
+                <span class="k">Built for :</span>
+                <span class="v" id="ex-role"></span>
+              </div>
+            </div>
+
+            <div class="ba-panel" data-reveal>
+              <div class="ba-card before" id="ba-before">
+                <div class="ba-head">
+                  <span class="lbl">Before · by hand</span>
+                  <span class="time" id="ba-before-time"></span>
+                </div>
+                <div class="ba-body" id="ba-before-body"></div>
+              </div>
+
+              <div class="ba-bridge" id="ba-bridge">
+                <div class="stem"></div>
+                <div class="ba-pill" id="ba-pill">Tool · idle</div>
+                <div class="stem"></div>
+              </div>
+
+              <div class="ba-card after" id="ba-after">
+                <div class="ba-head">
+                  <span class="lbl">After · with the tool</span>
+                  <span class="time" id="ba-after-time"></span>
+                </div>
+                <div class="ba-body" id="ba-after-body"></div>
+              </div>
+
+              <div class="ba-progress">
+                <span class="seg on" id="prog-0"></span>
+                <span class="seg" id="prog-1"></span>
+                <span class="seg" id="prog-2"></span>
+                <span class="meta" id="prog-meta"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORKFLOW -->
+      <section aria-labelledby="wf-h">
+        <div class="container">
+          <header class="section-head">
+            <div class="eyebrow muted" data-reveal><span class="num">01</span> The workflow</div>
+            <h2 id="wf-h" class="h2" data-reveal>
+              What it looks like — <em class="it-amber">before, and after.</em>
+            </h2>
+          </header>
+
+          <div class="workflow">
+            <div class="workflow-col before" data-reveal>
+              <div class="workflow-head">
+                <span class="lbl">Before · by hand</span>
+                <span class="rule"></span>
+              </div>
+              <ol class="workflow-list" id="wf-before"></ol>
+            </div>
+            <div class="workflow-col after" data-reveal>
+              <div class="workflow-head">
+                <span class="lbl">After · with the tool</span>
+                <span class="rule"></span>
+              </div>
+              <ol class="workflow-list" id="wf-after"></ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INPUTS / OUTPUTS -->
+      <section aria-labelledby="io-h">
+        <div class="container">
+          <header class="section-head">
+            <div class="eyebrow muted" data-reveal><span class="num">02</span> Inputs & outputs</div>
+            <h2 id="io-h" class="h2" data-reveal>
+              What goes in. <em class="it-amber">What comes out.</em>
+            </h2>
+          </header>
+
+          <div class="io-grid">
+            <div class="io-card in" data-reveal>
+              <div class="io-head">Inputs · what it takes in</div>
+              <ul class="io-list" id="io-in"></ul>
+            </div>
+            <div class="io-card out" data-reveal>
+              <div class="io-head">Outputs · what you get</div>
+              <ul class="io-list" id="io-out"></ul>
+            </div>
+          </div>
+
+          <div class="using" data-reveal>
+            <div class="lbl">Using it · day one</div>
+            <p id="using-p"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEXT UP -->
+      <section aria-labelledby="next-h">
+        <div class="container">
+          <header class="section-head">
+            <div class="eyebrow muted" data-reveal><span class="num">03</span> Next</div>
+            <h2 id="next-h" class="h2" data-reveal>
+              One example. <em class="it-amber">Your task is different.</em>
+            </h2>
+          </header>
+
+          <div class="next-grid">
+            <a class="next-card" id="next-card" data-reveal>
+              <span class="lbl">Next example</span>
+              <span class="ttl" id="next-title"></span>
+              <span class="meta" id="next-meta"></span>
+              <span class="go">See Breakdown <span aria-hidden="true">→</span></span>
+            </a>
+            <a class="next-card cta" href="https://calendly.com/jackzwhitee/15min" target="_blank" rel="noopener noreferrer" data-reveal>
+              <span class="lbl">For your business</span>
+              <span class="ttl">This is one example. Your task is different. That is exactly the point.</span>
+              <span class="it">We'll figure out which one first.</span>
+              <span class="go">Book 20-Min Call <span aria-hidden="true">→</span></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <span class="footer-brand">Role<span style="color:var(--amber);">Made</span></span>
+          <div class="footer-meta">
+            <a class="footer-link" href="index.html"><span aria-hidden="true">←</span> Home</a>
+            <a class="footer-link" href="https://calendly.com/jackzwhitee/15min" target="_blank" rel="noopener noreferrer">Contact</a>
+            <span class="footer-copy">© <span id="year">2026</span> RoleMade LLC</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <aside class="tweaks" id="tweaks" aria-label="Design tweaks"></aside>
+
+  </div>
+
+  <!-- Example data (same content as components/ExampleData.jsx) -->
+  <script>
+    window.EXAMPLE_DATA = {
+      "data-consolidation": {
+        industry: "Professional services · Data",
+        title: "Thirty files. One output. Done in seconds.",
+        tagline: "What used to take half a day now runs while you get coffee.",
+        role: "Whoever owns the numbers",
+        beforeTime: "3–4 hrs",
+        afterTime: "5 min",
+        summary: "Every cycle, someone opens each file, finds the rows that matter, pulls the numbers, and pastes them into the master sheet. Then checks their work. The output is identical every time. The only thing that changes is which cells moved since last cycle. The tool reads every file and builds the output automatically, in the format you already use.",
+        before: [
+          "Open the first file. Find the relevant rows.",
+          "Copy the numbers into the master sheet.",
+          "Repeat for every file in the folder.",
+          "Sort, group, and recalculate totals.",
+          "Check your work against last cycle.",
+          "Send it to whoever needs it."
+        ],
+        after: [
+          "Drop the files in the shared folder.",
+          "Tool reads every file and pulls the relevant data.",
+          "Output is built in your existing format automatically.",
+          "Review the numbers.",
+          "Send."
+        ],
+        inputs: [
+          "Source files (Excel, Google Sheets, or CSV exports)",
+          "Your existing output template",
+          "A one-time setup to define what gets pulled and where it goes"
+        ],
+        outputs: [
+          "Completed output in your existing format",
+          "Ready to review and send, not to rebuild",
+          "Runs on whatever schedule you set"
+        ],
+        using: "The person who used to spend three hours on this opens the output file instead of building it. They check the numbers, not the process. If something looks off, they flag it and the tool adjusts for next cycle. The half-day task becomes a five-minute review."
+      },
+      "billing": {
+        industry: "Professional services · Billing",
+        title: "Timesheets in. Invoices out.",
+        tagline: "Every billable hour captured, sorted, and formatted without the manual work.",
+        role: "Whoever runs billing",
+        beforeTime: "3–4 hrs",
+        afterTime: "20 min",
+        summary: "At the end of every billing cycle, someone collects time logs from the team, sorts them by client, applies the right rates, checks for gaps, and generates invoices. The inputs vary depending on who submitted what and when. The tool takes the logs, matches them to client codes and rates, and produces invoices ready to send.",
+        before: [
+          "Chase down anyone who has not submitted their hours.",
+          "Sort time entries by client code.",
+          "Cross-reference rates for each client.",
+          "Calculate totals and apply any adjustments.",
+          "Build the invoice in your standard format.",
+          "Check for anything missing before sending."
+        ],
+        after: [
+          "Time logs come in or are pulled automatically.",
+          "Tool sorts by client and applies the right rates.",
+          "Flags anything missing or inconsistent.",
+          "Invoices are generated in your format.",
+          "Review, approve, send."
+        ],
+        inputs: [
+          "Time logs from your team (spreadsheet, export, or time-tracking tool)",
+          "Client rate sheet",
+          "Your invoice template"
+        ],
+        outputs: [
+          "Invoices per client, ready to send",
+          "Flag list of anything missing or inconsistent",
+          "Summary of billable hours by client for the period"
+        ],
+        using: "Billing goes from a half-day of assembly to a twenty-minute review. The person doing it stops chasing time logs and starts checking invoices. If a rate changed or a client has a custom format, that gets set once and the tool handles it from there."
+      },
+      "engagement-letters": {
+        industry: "Professional services · Proposals",
+        title: "Engagement letter built in minutes, not an hour.",
+        tagline: "Same structure every time. Now it writes itself.",
+        role: "Whoever onboards new clients",
+        beforeTime: "60–90 min",
+        afterTime: "10 min",
+        summary: "Every new client gets an engagement letter that looks nearly identical to the last one. Scope, fees, timeline, terms. Someone opens the previous version, deletes the client name, updates the numbers, rewrites the timeline section, and checks that nothing from the last client leaked through. The tool takes the client details and produces a complete draft in your format, ready to review.",
+        before: [
+          "Open last month's engagement letter.",
+          "Replace the client name and contact details.",
+          "Rewrite the scope section for this engagement.",
+          "Update the fee schedule.",
+          "Adjust the timeline.",
+          "Read the whole thing to check for carryover from the previous client."
+        ],
+        after: [
+          "Enter the client name, engagement type, scope, and fee.",
+          "Tool generates a complete draft in your format.",
+          "Review and adjust if needed.",
+          "Send."
+        ],
+        inputs: [
+          "Your existing engagement letter template",
+          "Client name and contact details",
+          "Scope summary, fee, and timeline for this engagement"
+        ],
+        outputs: [
+          "Complete engagement letter in your format, ready to send",
+          "Clean draft with no carryover from previous clients",
+          "Editable if anything needs adjusting before it goes out"
+        ],
+        using: "The person writing the letter stops rebuilding it from scratch and starts reviewing a draft. The ten minutes it takes is for reading, not assembling. If the scope is unusual or the fee structure is different, they adjust the draft directly. The next one takes the same ten minutes."
+      },
+      "intake": {
+        industry: "Professional services · Intake",
+        title: "Intake that actually arrives complete.",
+        tagline: "Right info, right format, no follow-up loop.",
+        role: "Whoever owns new clients",
+        beforeTime: "45 min",
+        afterTime: "8 min",
+        summary: "New client fills out a generic form. Someone reads it, follows up for missing info, and reformats it into whatever your team actually uses. The tool does the collecting in your team's language and the formatting before you ever see the file.",
+        before: [
+          "Send the intake form.",
+          "Wait. Re-read what came back.",
+          "Email asking for the missing pieces.",
+          "Wait again.",
+          "Reformat into your team's working format.",
+          "Forward to whoever needs to start the work."
+        ],
+        after: [
+          "Send the tool's intake link.",
+          "Tool asks the right follow-up questions in real time.",
+          "Flags anything missing before the client submits.",
+          "Formatted intake hits your team's inbox in your format."
+        ],
+        inputs: [
+          "Your existing intake fields",
+          "Your team's working format (sheet, doc, or CRM record)",
+          "Rules for what counts as required and what to flag"
+        ],
+        outputs: [
+          "Completed intake in your format",
+          "Flag list of anything still missing",
+          "Optional routing to the right team member"
+        ],
+        using: "You stop writing the same follow-up email. Intake forms come in clean, formatted the way your team uses them, with anything missing already flagged. The intake-to-work step shrinks from a day to an hour."
+      },
+      "reporting": {
+        industry: "Owner · Weekly report",
+        title: "The Sunday night spreadsheet, gone.",
+        tagline: "Your numbers, organized and in your inbox, before the weekend starts.",
+        role: "Whoever owns the numbers",
+        beforeTime: "Sun pm",
+        afterTime: "Fri 4pm",
+        summary: "Reporting is the same shape every week. Pull numbers, paste, format, summarize. The tool runs that loop on a schedule using the spreadsheets you already use, in the format you already use, and drops the result in your inbox before the week is out.",
+        before: [
+          "Open four or five different spreadsheets.",
+          "Copy the week's rows out of each.",
+          "Paste into the master report tab.",
+          "Sort, group, recalculate totals.",
+          "Type the summary up top. Bullets, callouts, anything worth flagging.",
+          "Email it to whoever needs it. Sunday afternoon, every week."
+        ],
+        after: [
+          "Drop the week's spreadsheets in a shared folder (or skip, tool already has access).",
+          "Tool runs Friday at 3pm.",
+          "Organized report lands in your inbox at 4pm, same format, same structure, same summary style."
+        ],
+        inputs: [
+          "Source spreadsheets (Excel, Google Sheets, or exports from your CRM)",
+          "Your existing report template",
+          "Optional: a short rule sheet for what counts as worth flagging"
+        ],
+        outputs: [
+          "Filled-out report in your template",
+          "Summary at top with bullets, key changes, and callouts",
+          "Delivered as PDF or sheet on the schedule you set"
+        ],
+        using: "There is nothing to open. The report shows up. If you want to change the format or flag a field, it takes one message. The Sunday afternoon ritual goes away. Your Monday starts with a report, not a task."
+      },
+      "hr-onboarding": {
+        industry: "Professional services · HR",
+        title: "An assistant that knows your SOPs.",
+        tagline: "Same answer, every new hire, every time.",
+        role: "Whoever onboards new hires",
+        beforeTime: "6 hrs/hire",
+        afterTime: "20 min",
+        summary: "The knowledge is there. It lives in someone's head. New hires ask the same six weeks of questions and get inconsistent answers. The tool is trained on your SOPs and policies and answers the way the person who wrote them would.",
+        before: [
+          "Send the onboarding packet.",
+          "Get pinged with questions all week.",
+          "Answer them. Sometimes differently than last month.",
+          "Watch the new hire ask a coworker the same thing tomorrow."
+        ],
+        after: [
+          "New hire gets a link on day one.",
+          "They ask it whatever they would ask a coworker.",
+          "It answers in your team's language, with your policies.",
+          "Anything outside its scope routes to a real person, once."
+        ],
+        inputs: [
+          "Your existing SOPs, handbooks, and policies",
+          "Recent questions from your team's email or chat history (optional)",
+          "Tone reference, how your team writes"
+        ],
+        outputs: [
+          "On-demand answers for new hires",
+          "Escalation message when something is out of scope",
+          "Weekly digest of what is getting asked most"
+        ],
+        using: "New hires stop interrupting. The weekly digest tells you which SOPs are getting the most questions so you know exactly where the gaps are. The knowledge that lived in three people's heads is now answering consistently, day or night."
+      }
+    };
+  </script>
+
+  <!-- Per-page renderer -->
+  <script>
+  (() => {
+    const $  = (s) => document.querySelector(s);
+    const $$ = (s) => Array.from(document.querySelectorAll(s));
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('id') || 'data-consolidation';
+    const slugs = Object.keys(window.EXAMPLE_DATA);
+    const data = window.EXAMPLE_DATA[slug] || window.EXAMPLE_DATA[slugs[0]];
+    const idx = Math.max(0, slugs.indexOf(slug));
+    const nextSlug = slugs[(idx + 1) % slugs.length];
+    const next = window.EXAMPLE_DATA[nextSlug];
+
+    document.title = 'RoleMade · ' + data.title;
+
+    // Crumb + hero
+    $('#crumb-here').textContent = data.industry.split('·').pop().trim();
+    $('#ex-industry').textContent = data.industry;
+    $('#ex-title').textContent = data.title;
+    $('#ex-tagline').textContent = data.tagline;
+    $('#ex-summary').textContent = data.summary;
+    $('#ex-role').textContent = data.role;
+
+    // Before/after panel — animated mini
+    const widths = ['86%', '64%', '78%', '54%', '70%', '60%'];
+    const beforeBody = $('#ba-before-body');
+    data.before.slice(0, 5).forEach((label, i) => {
+      const row = document.createElement('div');
+      row.className = 'ba-line';
+      row.innerHTML = `<span class="label">${label}</span>
+        <span class="meter"><i style="--w:${widths[i % widths.length]}"></i></span>`;
+      beforeBody.appendChild(row);
+    });
+
+    const afterBody = $('#ba-after-body');
+    data.after.slice(0, 5).forEach((label) => {
+      const row = document.createElement('div');
+      row.className = 'ba-row';
+      row.innerHTML = `<span class="ba-check">✓</span><span class="lbl">${label}</span>`;
+      afterBody.appendChild(row);
+    });
+
+    $('#ba-before-time').textContent = '~ ' + data.beforeTime;
+    $('#ba-after-time').textContent = '~ ' + data.afterTime;
+    $('#prog-meta').textContent = data.beforeTime + ' → ' + data.afterTime;
+
+    // Phase cycle
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const afterCard = $('#ba-after');
+    const bridge = $('#ba-bridge');
+    const pill = $('#ba-pill');
+    const segs = [$('#prog-0'), $('#prog-1'), $('#prog-2')];
+
+    const setPhase = (p) => {
+      // 0 idle, 1 running, 2 done
+      afterCard.classList.toggle('running', p === 1);
+      afterCard.classList.toggle('done', p === 2);
+      bridge.classList.toggle('running', p === 1);
+      bridge.classList.toggle('done', p === 2);
+      pill.textContent = p === 0 ? 'Tool · idle' : p === 1 ? 'Tool · running' : 'Tool · done';
+      segs.forEach((s, i) => s.classList.toggle('on', i <= p));
+    };
+    setPhase(0);
+    if (!reduced) {
+      let p = 0;
+      const cycle = () => {
+        p = (p + 1) % 3;
+        setPhase(p);
+      };
+      setInterval(cycle, 2800);
+    } else {
+      setPhase(2);
+    }
+
+    // Workflow lists
+    const wfBefore = $('#wf-before');
+    data.before.forEach((t, i) => {
+      const li = document.createElement('li');
+      li.className = 'workflow-item';
+      li.innerHTML = `<span class="n">${String(i + 1).padStart(2, '0')}</span><span class="t">${t}</span>`;
+      wfBefore.appendChild(li);
+    });
+
+    const wfAfter = $('#wf-after');
+    data.after.forEach((t, i) => {
+      const li = document.createElement('li');
+      li.className = 'workflow-item';
+      li.innerHTML = `<span class="n">${String(i + 1).padStart(2, '0')}</span><span class="t">${t}</span>`;
+      wfAfter.appendChild(li);
+    });
+
+    // I/O
+    const ioIn = $('#io-in');
+    data.inputs.forEach((t) => {
+      const li = document.createElement('li');
+      li.innerHTML = `<span class="text">${t}</span>`;
+      ioIn.appendChild(li);
+    });
+    const ioOut = $('#io-out');
+    data.outputs.forEach((t) => {
+      const li = document.createElement('li');
+      li.innerHTML = `<span class="text">${t}</span>`;
+      ioOut.appendChild(li);
+    });
+
+    $('#using-p').textContent = data.using;
+
+    // Next card
+    const nextCard = $('#next-card');
+    nextCard.href = 'example.html?id=' + nextSlug;
+    $('#next-title').textContent = next.title;
+    $('#next-meta').textContent = next.industry + ' · ' + next.beforeTime + ' → ' + next.afterTime;
+  })();
+  </script>
+
+  <script src="assets/main.js" defer></script>
+</body>
+</html>

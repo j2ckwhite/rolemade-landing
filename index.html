@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0F1A" />
+  <title>RoleMade — One tool. One person. Day one.</title>
+  <meta name="description" content="We find where your team is losing hours every day on work that should take minutes. Then we build one custom tool for the one person who needs it." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,36..144,400;0,36..144,500;0,36..144,700;1,36..144,400;1,36..144,500&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,36..144,400;0,36..144,500;0,36..144,700;1,36..144,400;1,36..144,500&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" />
+
+  <link rel="preload" as="style" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="preload" as="script" href="assets/main.js" />
+</head>
+<body>
+
+  <!-- Decorative layers -->
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="shell">
+
+    <!-- ============================================================
+         NAV
+         ============================================================ -->
+    <nav class="nav" role="navigation" aria-label="Primary">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="RoleMade home">
+          <span class="brand-name">Role<span style="color:var(--amber);">Made</span></span>
+        </a>
+
+        <div class="nav-links">
+          <a class="nav-link" href="#problem">Problem</a>
+          <a class="nav-link" href="#process">Process</a>
+          <a class="nav-link" href="#examples">Examples</a>
+        </div>
+
+        <div class="nav-cta">
+          <a class="btn btn-primary" href="https://calendly.com/jackzwhitee/15min" target="_blank" rel="noopener noreferrer">Book 20-Min Call
+→</a>
+        </div>
+
+        <button class="nav-burger" aria-label="Open menu" aria-controls="drawer">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2 4h12M2 8h12M2 12h12" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="drawer-scrim" aria-hidden="true"></div>
+    <aside class="drawer" id="drawer" aria-label="Mobile menu">
+      <div class="drawer-head">
+        <span class="brand">
+          <span class="brand-name">Role<span style="color:var(--amber);">Made</span></span>
+        </span>
+        <button class="drawer-close" aria-label="Close menu">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3l10 10M13 3L3 13" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <a class="drawer-link" href="#problem"><span>Problem</span><span class="arrow">→</span></a>
+      <a class="drawer-link" href="#process"><span>Process</span><span class="arrow">→</span></a>
+      <a class="drawer-link" href="#why"><span>Why it works</span><span class="arrow">→</span></a>
+      <a class="drawer-link" href="#who"><span>Who it's for</span><span class="arrow">→</span></a>
+      <a class="drawer-link" href="#examples"><span>Examples</span><span class="arrow">→</span></a>
+      <a class="drawer-link" href="#objections"><span>Answers</span><span class="arrow">→</span></a>
+      <div class="drawer-cta">
+        <a class="btn btn-primary" href="https://calendly.com/jackzwhitee/15min" target="_blank" rel="noopener noreferrer">
+          Book A 20-Minute Call <span class="arrow">→</span>
+        </a>
+      </div>
+      <p class="drawer-aside">or email <a href="mailto:hello@rolemade.com">hello@rolemade.com</a></p>
+    </aside>
+
+    <main id="top">
+
+      <!-- ============================================================
+           HERO
+           ============================================================ -->
+      <section class="hero" aria-label="Hero">
+        <div class="hero-bg" aria-hidden="true">
+          <div class="hero-grid-overlay"></div>
+        </div>
+
+        <div class="container hero-content">
+          <div class="hero-layout" style="margin: 30px 0px 0px">
+            <div style="margin: 20px 0px 0px">
+              <div class="hero-eyebrow" data-reveal>Diagnosis first · Tools second</div>
+
+              <h1 class="h1 hero-title" data-reveal style="font-size: 70.32px">Your dispatcher shouldn't spend hours on routing crews.</h1>
+
+              <div class="hero-ctas" data-reveal>
+                <a class="btn btn-primary" href="https://calendly.com/jackzwhitee/15min" target="_blank" rel="noopener noreferrer">
+                  See If You're A Good Fit <span class="arrow">→</span>
+                </a>
+                <a class="btn btn-ghost" href="#examples">What Gets Fixed</a>
+              </div>
+            </div>
+
+            <div class="hero-aside" data-reveal>
+              <div class="diagnosis" id="diag">
+                <div class="diag-head">
+                  <span class="dot"></span>
+                  <span>Quoting / <span class="stage">BEFORE</span></span>
+                  <span class="time">~ 90 min</span>
+                </div>
+                <div class="diag-body"></div>
+                <div class="diag-foot">
+                  <span class="check">●</span>
+                  one tool · one role · day one
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           PROBLEM — 01
+           ============================================================ -->
+      <section id="problem" aria-labelledby="problem-h">
+        <div class="container">
+          <header class="section-head">
+            <div class="eyebrow muted" data-reveal><span class="num">01</span> The Problem</div>
+            <h2 id="problem-h" class="h2" data-reveal>
+              Somewhere in your operation, hours are spent every day on things that should take <em class="it-amber">minutes</em>.
+            </h2>
+            <p class="lead" data-reveal style="max-width: 640px; margin-top: 24px;">
+              You run a successful business. It works. But people on your team spend hours a day on tasks that should not take that long. They've stopped thinking of it as a problem. It's just how things work. It does not have to be.
+            </p>
+          </header>
+
+          <div class="problem-list">
+
+            <article class="task-row" data-reveal data-accordion-head>
+              <div class="task-head">
+                <div class="task-num">01</div>
+                <div>
+                  <div class="task-cat">Data Consolidation</div>
+                  <h3 class="task-title">Thirty spreadsheets. One output. Done by hand, every two weeks.</h3>
+                </div>
+                <div class="task-meta">
+                  <span class="task-time">3–4 hrs / cycle</span>
+                  <span class="task-toggle" aria-hidden="true">+</span>
+                </div>
+              </div>
+              <div class="task-body">
+                <div class="task-body-inner">
+                  <p>Someone opens each file, finds the rows that matter, pulls the numbers, and pastes them into the master sheet. Then checks their work. The output is identical every cycle. The only thing that changes is which cells moved since last time. The person doing it has it memorized. That is the problem.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="task-row" data-reveal data-accordion-head>
+              <div class="task-head">
+                <div class="task-num">02</div>
+                <div>
+                  <div class="task-cat">Client Intake</div>
+                  <h3 class="task-title">New client form came in. Half the fields are empty.</h3>
+                </div>
+                <div class="task-meta">
+                  <span class="task-time">45 min / client</span>
+                  <span class="task-toggle" aria-hidden="true">+</span>
+                </div>
+              </div>
+              <div class="task-body">
+                <div class="task-body-inner">
+                  <p>The form goes out. It comes back missing three things you always need. Someone emails asking for them. The client sends one. You follow up again for the other two. By the time the file is complete, four days have passed and whoever needs to start the work is still waiting on intake.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="task-row" data-reveal data-accordion-head>
+              <div class="task-head">
+                <div class="task-num">03</div>
+                <div>
+                  <div class="task-cat">Engagement Letters</div>
+                  <h3 class="task-title">Every new client gets a proposal built from last month's version.</h3>
+                </div>
+                <div class="task-meta">
+                  <span class="task-time">60–90 min / proposal</span>
+                  <span class="task-toggle" aria-hidden="true">+</span>
+                </div>
+              </div>
+              <div class="task-body">
+                <div class="task-body-inner">
+                  <p>Open the last one. Delete the client name. Update the scope. Adjust the fees. Rewrite the timeline. Check that nothing from the previous client leaked through. It takes an hour every time and the output looks nearly identical to the one before it.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="task-row" data-reveal data-accordion-head>
+              <div class="task-head">
+                <div class="task-num">04</div>
+                <div>
+                  <div class="task-cat">Client Reporting</div>
+                  <h3 class="task-title">Monthly report. Same format. Built from scratch. Every single month.</h3>
+                </div>
+                <div class="task-meta">
+                  <span class="task-time">2–3 hrs / report</span>
+                  <span class="task-toggle" aria-hidden="true">+</span>
+                </div>
+              </div>
+              <div class="task-body">
+                <div class="task-body-inner">
+                  <p>Pull the period's data, drop it into last month's template, update the numbers, rewrite the commentary, fix the formatting, send it out. The structure never changes. The inputs shift slightly. The two hours it takes does not.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="task-row" data-reveal data-accordion-head>
+              <div class="task-head">
+                <div class="task-num">05</div>
+                <div>
+                  <div class="task-cat">Billing From Timesheets</div>
+                  <h3 class="task-title">End of the month. Time logs are in. Nobody agrees on the format.</h3>
+                </div>
+                <div class="task-meta">
+                  <span class="task-time">3–4 hrs / month</span>
+                  <span class="task-toggle" aria-hidden="true">+</span>
+                </div>
+              </div>
+              <div class="task-body">
+                <div class="task-body-inner">
+                  <p>Collect everyone's hours. Sort by client code. Apply the right rates. Flag anything that looks off. Generate the invoices. Someone does this from a pile of spreadsheets and notes every billing cycle, in a format that varies depending on who submitted what and when.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="task-row" data-reveal data-accordion-head>
+              <div class="task-head">
+                <div class="task-num">06</div>
+                <div>
+                  <div class="task-cat">Pre-Meeting Prep</div>
+                  <h3 class="task-title">Client call is in an hour. Someone is pulling the file together right now.</h3>
+                </div>
+                <div class="task-meta">
+                  <span class="task-time">30–45 min / call</span>
+                  <span class="task-toggle" aria-hidden="true">+</span>
+                </div>
+              </div>
+              <div class="task-body">
+                <div class="task-body-inner">
+                  <p>Recent activity. Open items. Last invoice status. Outstanding questions. It lives in three different places and someone spends half an hour before every call assembling context that should be one click away. By the time they dial in they are current. Then it happens again next month.</p>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <p class="task-hint" data-reveal><span class="arrow">↳</span> Click any row to read more.</p>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           PROCESS — 02
+           ============================================================ -->
+      <section id="process" aria-labelledby="process-h">
+        <div class="container">
+          <header class="section-head" style="max-width:780px;">
+            <div class="eyebrow muted" data-reveal><span class="num">02</span> How it works</div>
+            <h2 id="process-h" class="h2" data-reveal>
+              Three stages. No jargon. <em class="it-amber">Understanding first. Working tool second.</em>
+            </h2>
+            <p class="lead" data-reveal style="margin-top: 24px;">
+              Every other AI vendor runs assessment → report → proposal for more work. We run understanding → working tool. You leave the engagement with something that runs — not a plan for what could run.
+            </p>
+          </header>
+
+          <div class="process-list">
+
+            <div class="step" data-reveal>
+              <div class="step-rail">
+                <div class="step-num">01</div>
+                <div class="step-line"></div>
+              </div>
+              <div class="step-card">
+                <div class="step-label">90-min call</div>
+                <h3 class="step-title">Understand the operation</h3>
+                <p class="step-body">A focused conversation about how the business actually runs day to day — what the repetitive work looks like, where time is being spent, what tasks people do on autopilot. Not a discovery call for selling. A real look at your operation.</p>
+              </div>
+            </div>
+
+            <div class="step" data-reveal>
+              <div class="step-rail">
+                <div class="step-num">02</div>
+                <div class="step-line"></div>
+              </div>
+              <div class="step-card">
+                <div class="step-label">Written brief</div>
+                <h3 class="step-title">Identify the right fix</h3>
+                <p class="step-body">Out of everything that surfaces, one problem is the right starting point. We write it down: here's the problem, here's why it's the right one to fix first, here's what a working solution looks like.</p>
+              </div>
+            </div>
+
+            <div class="step" data-reveal>
+              <div class="step-rail">
+                <div class="step-num">03</div>
+              </div>
+              <div class="step-card">
+                <div class="step-label">Custom tool</div>
+                <h3 class="step-title">Build it — and make sure it runs</h3>
+                <p class="step-body">Built for that specific task, for that specific person. Not a prototype. Not a proof of concept. Something they use on day one in their actual workflow — without setup or training on your end.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           WHY IT WORKS — 03
+           ============================================================ -->
+      <section id="why" class="why-section" aria-labelledby="why-h">
+        <div class="narrow">
+          <header class="section-head">
+            <div class="eyebrow muted" data-reveal><span class="num">03</span> Why it works</div>
+            <h2 id="why-h" class="h2" data-reveal>We don't build until we understand.</h2>
+          </header>
+
+          <p class="why-quote" data-reveal>
+            You can't build a tool that gets used if you don't understand the work it's replacing.
+          </p>
+
+          <p class="lead" data-reveal style="margin-bottom: 18px;">
+            Most AI implementations fail not because the technology doesn't work, but because no one took the time to understand the real workflow before building. The result looks good in a demo and collects dust after.
+          </p>
+          <p class="lead" data-reveal>
+            Diagnosis-first isn't a sales step. It's how the work actually gets done correctly. There's no way to build the right thing without it.
+          </p>
+
+          <div class="belief-stack">
+
+            <div class="belief" data-reveal>
+              <div class="belief-col">
+                <span class="belief-tag not">Not</span>
+                <span class="belief-text not">Generic AI dressed up for your industry.</span>
+              </div>
+              <div class="belief-col">
+                <span class="belief-tag yes">Yes</span>
+                <span class="belief-text yes">A tool built around how a specific person does a specific task.</span>
+              </div>
+            </div>
+
+            <div class="belief" data-reveal>
+              <div class="belief-col">
+                <span class="belief-tag not">Not</span>
+                <span class="belief-text not">A 10-minute conversation about "what would be helpful."</span>
+              </div>
+              <div class="belief-col">
+                <span class="belief-tag yes">Yes</span>
+                <span class="belief-text yes">A deep look at how the work actually gets done before anything is built.</span>
+              </div>
+            </div>
+
+            <div class="belief" data-reveal>
+              <div class="belief-col">
+                <span class="belief-tag not">Not</span>
+                <span class="belief-text not">Something that looks good in a demo and collects dust after.</span>
+              </div>
+              <div class="belief-col">
+                <span class="belief-tag yes">Yes</span>
+                <span class="belief-text yes">Something used on day one because it fits exactly.</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           WHO IT'S FOR — 04
+           ============================================================ -->
+      <section id="who" aria-labelledby="who-h">
+        <div class="container">
+          <header class="section-head" style="max-width: 700px;">
+            <div class="eyebrow muted" data-reveal><span class="num">04</span> Who it's for</div>
+            <h2 id="who-h" class="h2" data-reveal>Real operations. <em class="it-amber">Not tech startups.</em></h2>
+            <p class="lead" data-reveal style="margin-top: 24px;">
+              We work with the businesses that built themselves over decades — companies where the owner is still in the work, the team is small enough to know each other, and the tools that worked five years ago still mostly work today.
+            </p>
+          </header>
+
+          <div class="industry-grid">
+
+            <div class="industry" data-reveal>
+              <div class="industry-head">
+                <span class="industry-tag">Professional Services</span>
+                <span class="industry-num">01</span>
+              </div>
+              <p class="industry-body">Consulting, advisory, and project-based firms. Same proposals. Same reports. Same billing cycle every month. The client work changes. The admin behind it does not.</p>
+            </div>
+
+            <div class="industry" data-reveal>
+              <div class="industry-head">
+                <span class="industry-tag">Financial Services</span>
+                <span class="industry-num">02</span>
+              </div>
+              <p class="industry-body">Insurance agencies, wealth management, equipment leasing, and lending offices. Every client relationship comes with a paper trail. Most of it is still tracked by hand.</p>
+            </div>
+
+            <div class="industry" data-reveal>
+              <div class="industry-head">
+                <span class="industry-tag">Trades and Construction</span>
+                <span class="industry-num">03</span>
+              </div>
+              <p class="industry-body">HVAC, plumbing, electrical, GCs, and remodelers. The job is running fine. The quoting, dispatch, and paperwork behind it are not.</p>
+            </div>
+
+            <div class="industry" data-reveal>
+              <div class="industry-head">
+                <span class="industry-tag">Family-Owned</span>
+                <span class="industry-num">04</span>
+              </div>
+              <p class="industry-body">Built over decades. Run by the owner. Everyone knows what needs to change. Nobody has had the time to change it.</p>
+            </div>
+
+          </div>
+
+          <div class="fit-card" data-reveal>
+            <div class="fit-head">You're a good fit if</div>
+            <ul class="fit-list">
+              <li class="fit-item"><span class="fit-num">01</span><span class="fit-text">You're running a 5–50 person team.</span></li>
+              <li class="fit-item"><span class="fit-num">02</span><span class="fit-text">Revenue is $500K+ and growing without much help from software.</span></li>
+              <li class="fit-item"><span class="fit-num">03</span><span class="fit-text">You've tried ChatGPT, decided it wasn't for you, and moved on.</span></li>
+              <li class="fit-item"><span class="fit-num">04</span><span class="fit-text">There's one task on your team that eats hours and shouldn't.</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           EXAMPLES — 05
+           ============================================================ -->
+      <section id="examples" aria-labelledby="examples-h">
+        <div class="container">
+          <header class="section-head">
+            <div class="eyebrow muted" data-reveal><span class="num">05</span> What gets fixed</div>
+            <h2 id="examples-h" class="h2" data-reveal>Before. <em class="it-amber">→ after.</em></h2>
+            <p class="lead" data-reveal style="margin-top: 24px; max-width: 620px;">
+              Six tasks teams run by hand today. Six tools that handle them tomorrow. Click any card to see the full breakdown: what goes in, what comes out, and what using it looks like on day one.
+            </p>
+          </header>
+
+          <div class="examples-grid">
+
+            <a class="example-card" href="example.html?id=data-consolidation" data-reveal>
+              <div class="example-tag">Professional Services · Data</div>
+              <div class="example-meter">
+                <div class="meter-cell"><div class="lbl">Before</div><div class="val">3–4 hrs</div></div>
+                <div class="meter-arrow">→</div>
+                <div class="meter-cell after"><div class="lbl">After</div><div class="val">5 min</div></div>
+              </div>
+              <p class="example-body">Every cycle, someone opens each file, pulls the rows that matter, and pastes them into the master sheet. Then checks their work. Same output every time, built by hand every time.</p>
+              <div class="example-foot"><span>See How It Works</span><span class="arrow-pill">→</span></div>
+            </a>
+
+            <a class="example-card" href="example.html?id=billing" data-reveal>
+              <div class="example-tag">Professional Services · Billing</div>
+              <div class="example-meter">
+                <div class="meter-cell"><div class="lbl">Before</div><div class="val">3–4 hrs</div></div>
+                <div class="meter-arrow">→</div>
+                <div class="meter-cell after"><div class="lbl">After</div><div class="val">20 min</div></div>
+              </div>
+              <p class="example-body">Collect time logs from the team, sort by client code, apply the right rates, check for gaps, build the invoices. Done from a pile of spreadsheets at the end of every billing cycle.</p>
+              <div class="example-foot"><span>See How It Works</span><span class="arrow-pill">→</span></div>
+            </a>
+
+            <a class="example-card" href="example.html?id=engagement-letters" data-reveal>
+              <div class="example-tag">Professional Services · Proposals</div>
+              <div class="example-meter">
+                <div class="meter-cell"><div class="lbl">Before</div><div class="val">60–90 min</div></div>
+                <div class="meter-arrow">→</div>
+                <div class="meter-cell after"><div class="lbl">After</div><div class="val">10 min</div></div>
+              </div>
+              <p class="example-body">Open last month's version. Delete the client name. Update the scope, fees, and timeline. Read the whole thing to make sure nothing from the previous client leaked through.</p>
+              <div class="example-foot"><span>See How It Works</span><span class="arrow-pill">→</span></div>
+            </a>
+
+            <a class="example-card" href="example.html?id=intake" data-reveal>
+              <div class="example-tag">Professional Services · Intake</div>
+              <div class="example-meter">
+                <div class="meter-cell"><div class="lbl">Before</div><div class="val">45 min</div></div>
+                <div class="meter-arrow">→</div>
+                <div class="meter-cell after"><div class="lbl">After</div><div class="val">8 min</div></div>
+              </div>
+              <p class="example-body">New client fills out a generic form. Someone reads it, follows up for missing info, and reformats it into whatever your team actually uses.</p>
+              <div class="example-foot"><span>See How It Works</span><span class="arrow-pill">→</span></div>
+            </a>
+
+            <a class="example-card" href="example.html?id=reporting" data-reveal>
+              <div class="example-tag">Owner · Weekly Report</div>
+              <div class="example-meter">
+                <div class="meter-cell"><div class="lbl">Before</div><div class="val">Sun pm</div></div>
+                <div class="meter-arrow">→</div>
+                <div class="meter-cell after"><div class="lbl">After</div><div class="val">Fri 4pm</div></div>
+              </div>
+              <p class="example-body">Every Sunday, someone pulls the week's numbers, pastes them into a spreadsheet, formats it, and writes a summary. Forty-eight times a year.</p>
+              <div class="example-foot"><span>See How It Works</span><span class="arrow-pill">→</span></div>
+            </a>
+
+            <a class="example-card" href="example.html?id=hr-onboarding" data-reveal>
+              <div class="example-tag">Professional Services · HR</div>
+              <div class="example-meter">
+                <div class="meter-cell"><div class="lbl">Before</div><div class="val">6 hrs/hire</div></div>
+                <div class="meter-arrow">→</div>
+                <div class="meter-cell after"><div class="lbl">After</div><div class="val">20 min</div></div>
+              </div>
+              <p class="example-body">New hire gets an onboarding packet on day one. They skim it. Then they ask the same questions for the next six weeks.</p>
+              <div class="example-foot"><span>See How It Works</span><span class="arrow-pill">→</span></div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           OBJECTIONS — 06
+           ============================================================ -->
+      <section id="objections" aria-labelledby="obj-h">
+        <div class="narrow">
+          <header class="section-head">
+            <div class="eyebrow muted" data-reveal><span class="num">06</span> If you're thinking…</div>
+            <h2 id="obj-h" class="h2" data-reveal>The honest answers to the real objections.</h2>
+          </header>
+
+          <div class="objections-list">
+
+            <article class="obj" data-reveal>
+              <button class="obj-head" data-accordion-head aria-expanded="false">
+                <span class="obj-num">Q.01</span>
+                <span class="obj-q">"I tried ChatGPT. It gave me garbage."</span>
+                <span class="obj-toggle" aria-hidden="true">+</span>
+              </button>
+              <div class="obj-body">
+                <p class="obj-body-inner">That's because generic AI gives generic output. What we build is trained on your workflows, your language, and your team's actual process — not a general-purpose tool trying to cover everything for everyone. Off-the-shelf and custom are completely different products.</p>
+              </div>
+            </article>
+
+            <article class="obj" data-reveal>
+              <button class="obj-head" data-accordion-head aria-expanded="false">
+                <span class="obj-num">Q.02</span>
+                <span class="obj-q">"I don't think this would work for a business like mine."</span>
+                <span class="obj-toggle" aria-hidden="true">+</span>
+              </button>
+              <div class="obj-body">
+                <p class="obj-body-inner">We work with trades companies, construction firms, professional services, distribution, family-owned operations. The less tech-forward your business is, the more room there is to gain. We don't need you running a modern tech stack. We just need one task that's eating time.</p>
+              </div>
+            </article>
+
+            <article class="obj" data-reveal>
+              <button class="obj-head" data-accordion-head aria-expanded="false">
+                <span class="obj-num">Q.03</span>
+                <span class="obj-q">"Now's not the right time."</span>
+                <span class="obj-toggle" aria-hidden="true">+</span>
+              </button>
+              <div class="obj-body">
+                <p class="obj-body-inner">That's the same answer you'll have in six months. The task we'd fix isn't going to get less time-consuming on its own. The 90-minute conversation costs you nothing — and if it isn't a fit, you'll know before it's over.</p>
+              </div>
+            </article>
+
+            <article class="obj" data-reveal>
+              <button class="obj-head" data-accordion-head aria-expanded="false">
+                <span class="obj-num">Q.04</span>
+                <span class="obj-q">"What if my team won't use it?"</span>
+                <span class="obj-toggle" aria-hidden="true">+</span>
+              </button>
+              <div class="obj-body">
+                <p class="obj-body-inner">If they won't use it, we haven't built it right. That's the constraint we design around from the start. The person who's going to use it is part of how we scope and test the build. If it doesn't stick, that's on us to fix.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           FINAL CTA — 07
+           ============================================================ -->
+      <section id="cta" class="cta-section">
+        <div class="narrow cta-inner">
+          <div class="eyebrow muted" data-reveal style="display:inline-flex; align-items:center; gap:10px; margin-bottom: 20px;">
+            <span class="num">07</span> Next step
+          </div>
+
+          <h2 class="h1 cta-h" data-reveal>
+            Find out where your team is losing the most <em class="it-amber">time.</em>
+          </h2>
+
+          <p class="cta-sub" data-reveal>20-minute call. No pitch deck.</p>
+
+          <div class="cta-actions" data-reveal>
+            <a class="btn btn-primary" href="https://calendly.com/jackzwhitee/15min" target="_blank" rel="noopener noreferrer"
+               style="padding: 16px 32px; font-size: 16px; min-height: 56px;">
+              See If You're A Good Fit <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <span class="footer-brand">Role<span style="color:var(--amber);">Made</span></span>
+          <div class="footer-meta">
+            <a class="footer-link" href="https://calendly.com/jackzwhitee/15min" target="_blank" rel="noopener noreferrer">Contact</a>
+            <span class="footer-copy">© <span id="year">2026</span> RoleMade LLC</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Tweaks panel root -->
+    <aside class="tweaks" id="tweaks" aria-label="Design tweaks"></aside>
+
+  </div>
+
+  <script src="assets/main.js" defer></script>
+</body>
+</html>
