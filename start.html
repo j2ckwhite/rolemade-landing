@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start — RoleMade</title>
+<meta name="description" content="Tell RoleMade about the job you'd hand off first. One reply within a business day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Role<span>Made</span></a>
+    <nav class="links" id="links">
+      <a href="toolkits.html">Toolkits</a>
+      <a href="growth.html">Growth</a>
+      <a href="about.html">About</a>
+      <a href="index.html#how" class="how">How it works</a>
+      <a class="btn" href="start.html"><span class="l">Start with a task</span><span class="s">Start</span> <span class="arr">→</span></a>
+    </nav>
+    <div class="nav-r"><button class="burger" aria-controls="links" aria-expanded="false">Menu</button></div>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="formwrap">
+      <div class="side">
+        <p class="eyebrow on rv">Start</p>
+        <h2 class="rv d1">Tell us who you are. <em>We'll tell you</em> if it's a fit.</h2>
+        <p class="lede rv d2" style="margin-top:18px">A few fields, one reply. No newsletter, no sequence.</p>
+        <div class="list rv d3">
+          <div><b>01</b><span>We reply within one business day.</span></div>
+          <div><b>02</b><span>If it looks like a fit, we book a short walkthrough of the job.</span></div>
+          <div><b>03</b><span>If it doesn't, we say so and point you somewhere useful.</span></div>
+        </div>
+      </div>
+
+      <!-- Lead form. Placeholder for the future quiz + custom resource flow: keep the same fields, add steps after submit. -->
+      <div class="form rv d2">
+        <form id="lead-form" novalidate>
+          <div class="g2">
+            <div class="f"><label for="fn">First name</label><input id="fn" name="first_name" type="text" autocomplete="given-name" required></div>
+            <div class="f"><label for="ln">Last name</label><input id="ln" name="last_name" type="text" autocomplete="family-name" required></div>
+          </div>
+          <div class="f"><label for="co">Company</label><input id="co" name="company" type="text" autocomplete="organization" required></div>
+          <div class="f"><label for="em">Work email</label><input id="em" name="email" type="email" autocomplete="email" required></div>
+          <div class="f">
+            <label for="rev">Monthly revenue</label>
+            <select id="rev" name="monthly_revenue" required>
+              <option value="" selected disabled>Select a range</option>
+              <option value="0-10k">$0 – $10k / month</option>
+              <option value="10-25k">$10k – $25k / month</option>
+              <option value="25-75k">$25k – $75k / month</option>
+              <option value="75-100k">$75k – $100k / month</option>
+              <option value="100k+">$100k+ / month</option>
+            </select>
+          </div>
+          <button class="btn" type="submit">Send <span class="arr">→</span></button>
+          <p class="fine">One reply. Nothing else lands in your inbox.</p>
+        </form>
+        <div class="done">
+          <h3>Got it.</h3>
+          <p>You'll hear from us within one business day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="col">
+      <a class="brand" href="index.html">Role<span>Made</span></a>
+      <p class="about">Custom AI toolkits for executives and owners. Private, one-job tools that live on your own domain. Plus websites and Meta ads for service and info businesses.</p>
+    </div>
+    <div class="col"><h4>Services</h4><a href="toolkits.html">AI toolkits</a><a href="toolkits.html#map">Consulting</a><a href="growth.html">Websites</a><a href="growth.html#meta">Meta ads</a></div>
+    <div class="col"><h4>Company</h4><a href="index.html#how" class="how">How it works</a><a href="start.html">Start with a task</a></div>
+    <div class="col"><h4>Social</h4><a href="https://www.linkedin.com/in/rolemade/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/viarolemade" target="_blank" rel="noopener">Instagram</a></div>
+  </div>
+  <div class="base"><div class="wrap"><span>© 2026 RoleMade</span><span>Built with our own tools</span></div></div>
+</footer>
+
+<script src="site.js?v=4"></script>
+</body>
+</html>
