@@ -54,24 +54,34 @@
       plates.forEach(function (p) { var k = Number(p.getAttribute('data-i')); p.classList.toggle('on', k === step); p.classList.toggle('dim', step >= 0 && k !== step); });
       lbls.forEach(function (l) { l.classList.toggle('on', Number(l.getAttribute('data-for')) === step); });
       if (platesG) platesG.setAttribute('transform', 'translate(0 ' + shift[idx] + ')');
-      if (prog) {
-        if (step < 0) { prog.style.height = '0px'; }
-        else {
-          requestAnimationFrame(function () {
-            var k = states[idx].querySelector('.k');
-            if (!k) return;
-            var kr = k.getBoundingClientRect(), pr = pin.getBoundingClientRect();
-            prog.style.height = Math.max(0, kr.top + kr.height / 2 - pr.top) + 'px';
-          });
-        }
-      }
     };
+    // Continuous traveler: the dot slides down the rail with scroll, from the active marker
+    // toward the next step's row, so there is always motion between state changes.
+    var dot = track.querySelector('.j-dot');
+    var place = function (p) {
+      if (!dot || !col) return;
+      var idx = Math.floor(p * N), frac = p * N - idx, step = idx - 1;
+      var cr = col.getBoundingClientRect();
+      var x = 0, y0, y1;
+      var k = states[idx] && states[idx].querySelector('.k');
+      if (step < 0) { y0 = 0; if (k) { var kr0 = k.getBoundingClientRect(); x = kr0.left + kr0.width / 2 - cr.left; } }
+      else if (k) { var kr = k.getBoundingClientRect(); x = kr.left + kr.width / 2 - cr.left; y0 = kr.top + kr.height / 2 - cr.top; }
+      else { y0 = 0; }
+      var nxt = nextRows[step + 1] && nextRows[step + 1].querySelector('i');
+      if (nxt) { var nr = nxt.getBoundingClientRect(); y1 = nr.top + nr.height / 2 - cr.top; }
+      else { y1 = cr.height - 8; }
+      var y = y0 + (y1 - y0) * Math.min(1, Math.max(0, frac));
+      dot.style.transform = 'translate(' + x + 'px,' + y + 'px) translate(-50%,-50%)';
+      if (prog) prog.style.height = Math.max(0, y) + 'px';
+    };
+    var lastP = -1;
     var onJ = function () {
       var r = track.getBoundingClientRect();
       var range = track.offsetHeight - pin.offsetHeight;
       var p = (-(r.top - 72)) / range; // 72 = sticky nav height
       p = Math.min(0.9999, Math.max(0, p));
       apply(Math.floor(p * N));
+      if (p !== lastP) { lastP = p; requestAnimationFrame(function () { place(p); }); }
     };
     var fitBox = function () {
       if (!stack) return;
@@ -85,7 +95,7 @@
     };
     fitBox(); onJ();
     window.addEventListener('scroll', onJ, { passive: true });
-    window.addEventListener('resize', function () { fitBox(); cur = null; onJ(); });
+    window.addEventListener('resize', function () { fitBox(); cur = null; lastP = -1; onJ(); });
   }
 
   // Avoided-cost calculator
