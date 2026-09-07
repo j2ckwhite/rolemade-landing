@@ -55,33 +55,38 @@
       lbls.forEach(function (l) { l.classList.toggle('on', Number(l.getAttribute('data-for')) === step); });
       if (platesG) platesG.setAttribute('transform', 'translate(0 ' + shift[idx] + ')');
     };
-    // Continuous traveler: one dot slides down the whole rail as the section scrolls, top to bottom,
-    // strictly in the scroll direction. Smoothed in a rAF loop so slow or reversed scrolling never jumps.
-    var dot = track.querySelector('.j-dot');
+    // Progress ring: the active marker sits in one fixed slot. A ring around it fills as you scroll
+    // through that step, then the step docks to the top stack and the next one takes the slot.
+    var ring = track.querySelector('.j-ring');
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var targetY = 0, curY = 0, dotX = 0, railH = 0, raf = null, settled = true;
-    var measure = function () {
-      if (!col) return;
-      var cr = col.getBoundingClientRect();
-      railH = cr.height;
-      var k = track.querySelector('.j-state .k') || track.querySelector('.jr i');
-      if (k) { var kr = k.getBoundingClientRect(); dotX = kr.left + kr.width / 2 - cr.left; }
-    };
-    var paint = function (y) {
-      if (dot) dot.style.transform = 'translate(' + dotX + 'px,' + y + 'px) translate(-50%,-50%)';
+    var targetF = 0, curF = 0, raf = null, settled = true, lastIdx = -2;
+    var placeRing = function () {
+      if (!ring || !col) return;
+      var k = track.querySelector('.j-state.on .k') || track.querySelector('.j-state .k');
+      if (!k) return;
+      // offset positions ignore the state's slide-in transform, so the ring lands exactly on the marker
+      var st = k.parentElement, cen = st.parentElement;
+      var y = cen.offsetTop + st.offsetTop + k.offsetTop;
+      ring.style.top = y + 'px';
       if (prog) prog.style.height = Math.max(0, y) + 'px';
+      ring.classList.add('on');
     };
+    var paintF = function (f) { if (ring) ring.style.setProperty('--pf', f.toFixed(4)); };
     var tick = function () {
-      var d = targetY - curY;
-      if (Math.abs(d) < 0.3) { curY = targetY; paint(curY); raf = null; settled = true; return; }
-      curY += d * 0.16;
-      paint(curY);
+      var d = targetF - curF;
+      if (Math.abs(d) < 0.002) { curF = targetF; paintF(curF); raf = null; settled = true; return; }
+      curF += d * 0.18; paintF(curF);
       raf = requestAnimationFrame(tick);
     };
     var place = function (p) {
-      if (!railH) measure();
-      targetY = 10 + p * (railH - 20);
-      if (reduce) { curY = targetY; paint(curY); return; }
+      var idx = Math.floor(p * N), frac = p * N - idx;
+      if (idx !== lastIdx) {
+        // handoff: the ring starts empty on the new step (or full when scrolling back into a step)
+        curF = idx > lastIdx ? 0 : 1; lastIdx = idx;
+        requestAnimationFrame(placeRing);
+      }
+      targetF = Math.min(1, Math.max(0, frac));
+      if (reduce) { curF = targetF; paintF(curF); return; }
       if (settled) { settled = false; raf = requestAnimationFrame(tick); }
     };
     var lastP = -1;
@@ -103,9 +108,9 @@
         stack.setAttribute('viewBox', '-70 0 720 600');
       }
     };
-    fitBox(); measure(); onJ();
+    fitBox(); onJ(); requestAnimationFrame(placeRing);
     window.addEventListener('scroll', onJ, { passive: true });
-    window.addEventListener('resize', function () { fitBox(); cur = null; lastP = -1; railH = 0; onJ(); });
+    window.addEventListener('resize', function () { fitBox(); cur = null; lastP = -1; lastIdx = -2; onJ(); });
   }
 
   // Avoided-cost calculator
